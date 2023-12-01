@@ -68,7 +68,7 @@ def main():
     # Apply text cleaning to the 'Issue Statement' column
     df["Issue Statement"] = df["Issue Statement"].apply(lambda x: clean_text(x, nlp))
 
-    # Define primary and secondary seed words for each safety trait
+    # Define primary and secondary seed words for each safety trait    
     seed_words = {
         "Personal Accountability": ["responsibility", "accountability", "help", "support", "trained", "qualified", "understand", "complete", "involvement"],
         "Questioning Attitude": ["complacency", "complacent", "challenge", "error", "hazard", "caution", "discrepancy", "anomaly", "assumption", "question", "uncertain", "unknown", "risk", "trend", "unexpected", "unclear", "degrading", "aging"],
@@ -80,14 +80,14 @@ def main():
         "Problem Identification and Resolution": ["identify", "corrective", "action", "issue", "yellow", "red", "prevent", "foreign", "poor", "inadequate", "degraded", "evaluation", "problem", "cause", "root", "investigation", "investigate", "recommendation", "resolution", "mitigate"],
         "Environment for Raising Concerns": ["environment", "fear", "harassment", "discrimination", "promote", "severity", "failure", "submit", "report", "expired", "raise"],
         "Work Processes": ["engineering", "control", "activity", "contingency", "production", "schedule", "work", "margin", "operate", "maintain", "maintenance", "procedure", "package", "accurate", "current", "backlog", "instruction", "operation", "design", "requirement", "standard"]
-    }    
-
+    }
+    
     secondary_seed_words = {
         "Personal Accountability_secondary": ["ownership", "dedication", "commitment", "reliability", "dependability", "self-discipline", "initiative", "reponsiveness", "proactive"],
         "Questioning Attitude_secondary": ["vigilance", "doubt", "scrutiny", "curiosity", "inquisitiveness", "skepticism", "critical", "examination", "alertness", "vigilant"],
         "Effective Safety Communication_secondary": ["clarity", "transparency", "articulation", "cooperation", "collaboration", "engagement", "feedback", "openness", "expressiveness", "interaction"],
         "Leadership Safety Values and Actions_secondary": ["integrity", "ethical", "trustworthy", "fairness", "responsiveness", "accountability", "transparency", "consistency", "visionary", "motivational"],
-        "Decision Making_secondary": ["analysis", "deliberation", "judicious", "logical", "reasoned", "informed", "well-thought-out", "strategic", "sensible", "considered"],
+        "Decision Making": ["analysis", "deliberation_secondary", "judicious", "logical", "reasoned", "informed", "well-thought-out", "strategic", "sensible", "considered"],
         "Respectful Work Environment_secondary": ["tolerance", "inclusivity", "equality", "courtesy", "appreciation", "empathy", "cooperation", "harmony", "understanding", "courteous"],
         "Continuous Learning_secondary": ["adaptability", "flexibility", "innovation", "upskilling", "knowledge-sharing", "exploration", "growth mindset", "persistence", "curiosity", "development"],
         "Problem Identification and Resolution_secondary": ["analytical", "troubleshooting", "diagnostic", "proactive", "systematic", "strategic", "efficient", "solutions-oriented", "resilient", "resourceful"],
